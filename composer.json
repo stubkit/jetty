@@ -16,12 +16,9 @@
     "extra": {
         "laravel": {
             "providers": [
-                "StubKit\\Jetty\\Providers\\JettyProvider"
+                "StubKit\\Jetty\\JettyProvider"
             ]
         }
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
     },
     "config": {
         "sort-packages": true
