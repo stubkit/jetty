@@ -1,0 +1,45 @@
+<template>
+    <app-layout>
+        <template #header>
+            <h2 class="flex items-center text-sm text-gray-700 uppercase font-bold tracking-widest">
+                {{ model.titlePlural }}
+            </h2>
+        </template>
+
+        <div>
+            <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
+                <jet-section-title class="mb-5">
+                    <template #title>{{ model.titlePlural }}</template>
+                    <template #description>Here are the {{ model.lowerPlural }}</template>
+                    <template #aside>
+                        <jet-secondary-button @click="$inertia.visit(route('{{model.slugPlural}}.create'))">
+                            New {{ model.title }}
+                        </jet-secondary-button>
+                    </template>
+                </jet-section-title>
+
+                {{ fields.index }}
+            </div>
+        </div>
+    </app-layout>
+</template>
+
+<script>
+    import AppLayout from '@/Layouts/AppLayout'
+    import JetNavLink from '@/Jetstream/NavLink'
+    import JetSectionTitle from '@/Jetstream/SectionTitle'
+    import JetSecondaryButton from '@/Jetstream/SecondaryButton'
+
+    export default {
+        props: [
+            '{{model.snakePlural}}'
+        ],
+
+        components: {
+            AppLayout,
+            JetNavLink,
+            JetSectionTitle,
+            JetSecondaryButton,
+        }
+    }
+</script>

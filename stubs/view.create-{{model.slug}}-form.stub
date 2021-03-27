@@ -1,0 +1,56 @@
+<template>
+    <jet-form-section @submitted="create{{model.studly}}">
+        <template #title>
+            {{ model.title }} Details
+        </template>
+
+        <template #description>
+            Create a new {{ model.lower }}
+        </template>
+
+        <template #form>
+            {{ fields.create }}
+        </template>
+
+        <template #actions>
+            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                Create
+            </jet-button>
+        </template>
+    </jet-form-section>
+</template>
+
+<script>
+    import JetButton from '@/Jetstream/Button'
+    import JetFormSection from '@/Jetstream/FormSection'
+    import JetInput from '@/Jetstream/Input'
+    import JetInputError from '@/Jetstream/InputError'
+    import JetLabel from '@/Jetstream/Label'
+
+    export default {
+        components: {
+            JetButton,
+            JetFormSection,
+            JetInput,
+            JetInputError,
+            JetLabel,
+        },
+
+        data() {
+            return {
+                form: this.$inertia.form({
+                    {{ fields.jsObjectCreate }}
+                })
+            }
+        },
+
+        methods: {
+            create{{ model.studly }}() {
+                this.form.post(route('{{ model.slugPlural }}.store'), {
+                    errorBag: 'create{{ model.studly }}',
+                    preserveScroll: true
+                });
+            },
+        },
+    }
+</script>

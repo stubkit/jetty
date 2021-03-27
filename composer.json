@@ -1,0 +1,31 @@
+{
+    "name": "stubkit/jetty",
+    "description": "Inertia Jetstream on steriods",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.3.0"
+    },
+    "require-dev": {
+        "stubkit/stubkit": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "StubKit\\Jetty\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StubKit\\Jetty\\Providers\\JettyProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

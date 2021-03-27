@@ -1,0 +1,33 @@
+<template>
+    <app-layout>
+        <template #header>
+            <h2 class="flex items-center text-sm text-gray-700 uppercase font-bold tracking-widest">
+                <span>
+                    <inertia-link :href="route('{{model.slugPlural}}.index')">
+                        {{ model.titlePlural }}
+                    </inertia-link>
+                    <span class="px-2 text-sm text-gray-400">/</span>
+                    <span>New {{ model.title }}</span>
+                </span>
+            </h2>
+        </template>
+
+        <div class="py-12">
+            <div class="max-w-4xl mx-auto sm:px-6 lg:px-8">
+                <Create{{ model.studly }}Form />
+            </div>
+        </div>
+    </app-layout>
+</template>
+
+<script>
+    import AppLayout from '@/Layouts/AppLayout'
+    import Create{{model.studly}}Form from './Create{{model.studly}}Form';
+
+    export default {
+        components: {
+            AppLayout,
+            Create{{model.studly}}Form
+        },
+    }
+</script>

@@ -1,0 +1,64 @@
+<template>
+    <jet-form-section @submitted="edit{{model.studly}}">
+        <template #title>
+            Edit {{ model.title }}
+        </template>
+
+        <template #description>
+            Update the {{ model.lower }} details.
+        </template>
+
+        <template #form>
+            {{ fields.edit }}
+        </template>
+
+        <template #actions>
+            <jet-action-message :on="form.recentlySuccessful" class="mr-3">
+                Saved.
+            </jet-action-message>
+
+            <jet-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                Save
+            </jet-button>
+        </template>
+    </jet-form-section>
+</template>
+
+<script>
+    import JetActionMessage from '@/Jetstream/ActionMessage'
+    import JetButton from '@/Jetstream/Button'
+    import JetFormSection from '@/Jetstream/FormSection'
+    import JetInput from '@/Jetstream/Input'
+    import JetInputError from '@/Jetstream/InputError'
+    import JetLabel from '@/Jetstream/Label'
+
+    export default {
+        components: {
+            JetActionMessage,
+            JetButton,
+            JetFormSection,
+            JetInput,
+            JetInputError,
+            JetLabel,
+        },
+
+        props: ['{{ model.snake }}'],
+
+        data() {
+            return {
+                form: this.$inertia.form({
+                    {{ fields.jsObjectEdit }}
+                })
+            }
+        },
+
+        methods: {
+            edit{{model.studly}}() {
+                this.form.put(route('{{model.slugPlural}}.update', this.{{model.camel}}.id), {
+                    errorBag: 'edit{{model.studly}}',
+                    preserveScroll: true
+                });
+            },
+        },
+    }
+</script>
