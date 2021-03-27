@@ -3,9 +3,7 @@
     "description": "Inertia Jetstream on steriods",
     "license": "MIT",
     "require": {
-        "php": ">=7.3.0"
-    },
-    "require-dev": {
+        "php": ">=7.3.0",
         "stubkit/stubkit": "*"
     },
     "autoload": {
