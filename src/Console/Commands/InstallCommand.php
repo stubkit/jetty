@@ -63,7 +63,7 @@ class InstallCommand extends Command
             ->namespace(\$this->namespace)
             ->group(base_path('routes/auth.php'));";
 
-        $provider = file_get_contents(app_path('Providers/RouteServiceProviders.php'));
+        $provider = file_get_contents(app_path('Providers/RouteServiceProvider.php'));
 
         file_put_contents(
             app_path('Providers/RouteServiceProvider.php'),
