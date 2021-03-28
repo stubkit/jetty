@@ -32,8 +32,8 @@ class InstallCommand extends Command
         $this->installAuthRoutes();
 
         $this->replaceInFile(
-            "// protected \$namespace = 'App\\Http\\Controllers';",
-            "protected \$namespace = 'App\\Http\\Controllers';",
+            '// protected $namespace',
+            'protected $namespace',
             app_path('Providers/RouteServiceProvider.php')
         );
 
