@@ -41,7 +41,7 @@ class JettyProvider extends ServiceProvider
     public function handlePublishingAssets()
     {
         $this->publishes([
-            __DIR__.'/../../config/stubkit.php' => config_path('stubkit.php'),
+            __DIR__.'/../config/stubkit.php' => config_path('stubkit.php'),
         ], 'jetty-config');
 
         $this->publishes([
@@ -49,11 +49,11 @@ class JettyProvider extends ServiceProvider
         ], 'jetty-stubs');
 
         $this->publishes([
-            __DIR__.'/..resources/views' => resource_path('views/vendor/stubkit'),
+            __DIR__.'/../resources/views' => resource_path('views/vendor/stubkit'),
         ], 'jetty-views');
 
         $this->publishes([
-            __DIR__.'/..resources/js' => resource_path('js'),
+            __DIR__.'/../resources/js' => resource_path('js'),
         ], 'jetty-vue');
     }
 }
