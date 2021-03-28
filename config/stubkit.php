@@ -43,6 +43,17 @@ return [
             'test --filter={{ scaffold.studly }}Test',
         ],
 
+        'pivot' => [
+            'make:model {{scaffold.studly}} --pivot',
+            'make:controller {{scaffold.studly}}Controller --pivot',
+            'make:routes {{scaffold.studly}} --stub=pivot',
+            'make:test {{scaffold.studly}}Test',
+            'make:factory {{ scaffold.studly }}Factory',
+            'make:seeder {{ scaffold.studly }}Seeder',
+            'make:migration create_{{ scaffold.snakePlural }}_table',
+            'migrate',
+            'test --filter={{ scaffold.studly }}Test',
+        ]
     ],
 
     /*
@@ -107,7 +118,7 @@ return [
 
         'app' => [
             'url' => function () {
-                return url();
+                return config('app.url');
             },
             'namespace' => function () {
                 return app()->getNamespace();
@@ -146,6 +157,30 @@ return [
                 return view('stubkit::formats.js-object-filled')->with('fields', $fields);
             }
         ],
+    ],
+
+    /*
+   |--------------------------------------------------------------------------
+   | Views
+   |--------------------------------------------------------------------------
+   | These settings refer to the make:views command.
+   |--------------------------------------------------------------------------
+   */
+    'views' => [
+
+        'path' => 'resources/js/Pages/{{model.studlyPlural}}/{{view.studly}}.vue',
+
+        'stubs' => [
+            'index',
+            'create',
+            'create-{{model.slug}}-form',
+            'show',
+            'show-{{model.slug}}-details',
+            'edit',
+            'edit-{{model.slug}}-form',
+            'remove',
+            'remove-{{model.slug}}-form',
+        ]
     ],
 
     /*
@@ -197,27 +232,5 @@ return [
         'vendor',
         'storage',
         'bootstrap',
-    ],
-
-    /*
-   |--------------------------------------------------------------------------
-   | Views
-   |--------------------------------------------------------------------------
-   | These settings refer to the make:views command.
-   |--------------------------------------------------------------------------
-   */
-    'views' => [
-        'path' => 'resources/js/Pages/{{model.studlyPlural}}/{{view.studly}}.vue',
-        'stubs' => [
-            'index',
-            'create',
-            'create-{{model.slug}}-form',
-            'show',
-            'show-{{model.slug}}-details',
-            'edit',
-            'edit-{{model.slug}}-form',
-            'remove',
-            'remove-{{model.slug}}-form',
-        ]
     ],
 ];

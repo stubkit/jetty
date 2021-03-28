@@ -12,4 +12,4 @@ foreach($fields as $field) {
 $output = '['. rtrim($output, ',') .']';
 
 @endphp
-{{ $output }}
+{!! $output !!}

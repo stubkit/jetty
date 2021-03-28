@@ -11,4 +11,4 @@ foreach ((new Fields(config('stubkit-types'), config('stubkit-mappings')))->str(
 $output = rtrim($output);
 
 @endphp
-{{ $output }}
+{!! $output !!}
