@@ -1,1 +1,0 @@
-$table->timestamp('{{ $field->snake() }}');

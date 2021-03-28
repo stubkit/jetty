@@ -1,1 +1,0 @@
-$table->increments('{{ $field->snake() }}');

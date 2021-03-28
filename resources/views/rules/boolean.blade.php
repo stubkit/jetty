@@ -1,1 +1,0 @@
-'{{ $field->snake() }}' => 'required|boolean',

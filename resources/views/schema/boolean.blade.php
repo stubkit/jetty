@@ -1,1 +1,0 @@
-$table->boolean('{{ $field->snake() }}');

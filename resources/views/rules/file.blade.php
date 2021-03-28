@@ -1,1 +1,0 @@
-'{{ $field->snake() }}' => 'sometimes|file',

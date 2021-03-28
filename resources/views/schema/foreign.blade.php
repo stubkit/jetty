@@ -1,1 +1,0 @@
-$table->foreignId('{{ $field->snake() }}');
