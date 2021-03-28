@@ -27,7 +27,11 @@
                     <template #description>Here are the {{ model.lower }} details</template>
                 </jet-section-title>
 
-                {{ fields.show }}
+                <div class="bg-white rounded-md shadow overflow-x-auto">
+                    <table class="w-full border-t border-gray-200">
+                        {{ fields.show }}
+                    </table>
+                </div>
             </div>
         </div>
     </app-layout>

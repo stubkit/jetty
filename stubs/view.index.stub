@@ -18,7 +18,19 @@
                     </template>
                 </jet-section-title>
 
-                {{ fields.index }}
+                <jet-table :data="{{ model.camelPlural  }}" :cells="{{ fields.array }}" to="{{ model.slugPlural  }}.show">
+                    {{ fields.index }}
+                    <template #tr.after="{ value: {{ model.camel  }} }">
+                        <jet-dropdown-dots direction="vertical">
+                            <jet-dropdown-link :href="route('{{ model.slugPlural  }}.edit', {{ model.camel  }}.id)">
+                                Edit
+                            </jet-dropdown-link>
+                            <jet-dropdown-link :href="route('{{ model.slugPlural  }}.destroy', {{ model.camel  }}.id)" method="delete">
+                                Delete
+                            </jet-dropdown-link>
+                        </jet-dropdown-dots>
+                    </template>
+                </jet-table>
             </div>
         </div>
     </app-layout>
