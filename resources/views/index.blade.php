@@ -1,17 +1,17 @@
 @inject('helper', 'StubKit\Support\Fields')
-<div class="bg-white rounded-md shadow overflow-x-auto">
-    <table class="w-full whitespace-nowrap" cellspacing="0" cellpadding="0">
-        <tr class="text-left font-bold border-b">
-@foreach($helper->str($fields) as $field)
-            <th class="px-6 pt-6 pb-4">{{ $field->title() }}</th>
-@endforeach
-            <th></th>
-        </tr>
-
-        <tr v-for="@{{ model.camel }} in @{{ model.camelPlural }}.data" @click="$inertia.visit(route('@{{model.slugPlural}}.show', @{{model.camel}}.id))" :key="@{{ model.camel }}.id" class="cursor-pointer hover:bg-gray-50 focus-within:bg-gray-100 border-b">
+<jet-table :data="{{ model.camelPlural  }}" :cells="@{{ fields.array }}" to="{{ model.slugPlural  }}.show">
 @foreach($helper->get('index', $fields) as $field)
-            @include($field->view(), $field->data())
+        @include($field->view(), $field->data())
 @endforeach
-        </tr>
-    </table>
-</div>
+    <template #tr.after="{ value: {{ model.camel  }} }">
+        <jet-dropdown-dots direction="vertical">
+            <jet-dropdown-link :href="route('{{ model.slugPlural  }}.edit', {{ model.camel  }}.id)">
+                Edit
+            </jet-dropdown-link>
+            <jet-dropdown-link :href="route('{{ model.slugPlural  }}.destroy', {{ model.camel  }}.id)" method="delete">
+                Delete
+            </jet-dropdown-link>
+        </jet-dropdown-dots>
+    </template>
+</jet-table>
+

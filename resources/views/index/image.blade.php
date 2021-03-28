@@ -1,1 +1,3 @@
-<td><img :src="@stubkit('{{ model.camel }}.{{ field.snake }}')" style="width: 50px;" /></td>
+<template #td.{{ $field->snake()  }}="{ value }">
+    <img :src="value" class="rounded-full w-8 h-8 -my-2"/>
+</template>

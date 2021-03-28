@@ -47,7 +47,7 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    {{ fields.jsObjectEdit }}
+                    {{ fields.jsObjectFilled }}
                 })
             }
         },

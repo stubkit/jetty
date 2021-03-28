@@ -39,7 +39,7 @@
         data() {
             return {
                 form: this.$inertia.form({
-                    {{ fields.jsObjectCreate }}
+                    {{ fields.jsObjectEmpty }}
                 })
             }
         },
