@@ -31,14 +31,20 @@ class InstallCommand extends Command
 
         $this->installAuthRoutes();
 
+        $this->replaceInFile(
+            "// protected \$namespace = 'App\\Http\\Controllers';",
+            "protected \$namespace = 'App\\Http\\Controllers';",
+            app_path('Providers/RouteServiceProvider.php')
+        );
+
         $this->comment('Publishing Jetty Configuration...');
         $this->comment('Publishing Jetty Views...');
         $this->comment('Publishing Jetty Stubs...');
 
-        $this->call('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
-        $this->call('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
-        $this->call('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
-        $this->call('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
 
         return 1;
     }
@@ -51,23 +57,24 @@ class InstallCommand extends Command
     {
         file_put_contents(base_path('routes/auth.php'), "<?php\n");
 
-        $web = "Route::middleware('web')
-            ->namespace(\$this->namespace)
-            ->group(base_path('routes/web.php'));";
+        $search = '->group(base_path(\'routes/web.php\'));';
+        $replace = "->group(base_path('routes/web.php'));\n\n";
+        $replace .= "\t\t\tRoute::middleware(['web', 'auth:sanctum', 'verified'])
+            \t->namespace(\$this->namespace)
+            \t->group(base_path('routes/auth.php'));";
 
-        $webAndAuth = "Route::middleware('web')
-            ->namespace(\$this->namespace)
-            ->group(base_path('routes/web.php'));\n";
-
-        $webAndAuth .= "Route::middleware(['web', 'auth:sanctum', 'verified'])
-            ->namespace(\$this->namespace)
-            ->group(base_path('routes/auth.php'));";
-
-        $provider = file_get_contents(app_path('Providers/RouteServiceProvider.php'));
-
-        file_put_contents(
-            app_path('Providers/RouteServiceProvider.php'),
-            str_replace($web, $webAndAuth, $provider)
-        );
+        $this->replaceInFile($search, $replace, app_path('Providers/RouteServiceProvider.php'));
+    }
+    /**
+     * Replace a given string within a given file.
+     *
+     * @param  string  $search
+     * @param  string  $replace
+     * @param  string  $path
+     * @return void
+     */
+    protected function replaceInFile($search, $replace, $path)
+    {
+        file_put_contents($path, str_replace($search, $replace, file_get_contents($path)));
     }
 }
