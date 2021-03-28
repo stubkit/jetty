@@ -35,10 +35,10 @@ class InstallCommand extends Command
         $this->comment('Publishing Jetty Views...');
         $this->comment('Publishing Jetty Stubs...');
 
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
+        $this->call('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
+        $this->call('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
+        $this->call('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
+        $this->call('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
 
         return 1;
     }
