@@ -45,15 +45,15 @@ class JettyProvider extends ServiceProvider
         ], 'jetty-config');
 
         $this->publishes([
-            __DIR__.'/../../stubs' => base_path('stubs'),
+            __DIR__.'/../stubs' => base_path('stubs'),
         ], 'jetty-stubs');
 
         $this->publishes([
-            __DIR__.'/../../resources/views' => resource_path('views/vendor/stubkit'),
+            __DIR__.'/..resources/views' => resource_path('views/vendor/stubkit'),
         ], 'jetty-views');
 
         $this->publishes([
-            __DIR__.'/../../resources/js' => resource_path('js'),
+            __DIR__.'/..resources/js' => resource_path('js'),
         ], 'jetty-vue');
     }
 }
