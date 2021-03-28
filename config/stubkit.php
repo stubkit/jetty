@@ -126,26 +126,26 @@ return [
         ],
 
         'fields' => [
-            'schema' => function ($value) {
-                return view('stubkit::schema')->with(['fields' => $value]);
+            'schema' => function ($fields) {
+                return view('stubkit::schema')->with('fields', $fields);
             },
-            'faker' => function ($value) {
-                return view('stubkit::faker')->with(['fields' => $value]);
+            'faker' => function ($fields) {
+                return view('stubkit::faker')->with('fields', $fields);
             },
-            'rules' => function ($value) {
-                return view('stubkit::rules')->with(['fields' => $value]);
+            'rules' => function ($fields) {
+                return view('stubkit::rules')->with('fields', $fields);
             },
-            'index' => function ($value) {
-                return view('stubkit::index')->with(['fields' => $value]);
+            'index' => function ($fields) {
+                return view('stubkit::index')->with('fields', $fields);
             },
-            'show' => function ($value) {
-                return view('stubkit::show')->with(['fields' => $value]);
+            'show' => function ($fields) {
+                return view('stubkit::show')->with('fields', $fields);
             },
-            'create' => function ($value) {
-                return view('stubkit::create')->with(['fields' => $value]);
+            'create' => function ($fields) {
+                return view('stubkit::create')->with('fields', $fields);
             },
-            'edit' => function ($value) {
-                return view('stubkit::edit')->with(['fields' => $value]);
+            'edit' => function ($fields) {
+                return view('stubkit::edit')->with('fields', $fields);
             },
             'array' => function($fields) {
                return view('stubkit::formats.array')->with('fields', $fields);
