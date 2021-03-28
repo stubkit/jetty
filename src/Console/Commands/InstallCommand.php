@@ -3,6 +3,7 @@
 namespace StubKit\Jetty\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Str;
 
 class InstallCommand extends Command
 {
@@ -27,7 +28,18 @@ class InstallCommand extends Command
      */
     public function handle()
     {
-        $this->call('stubkit:install');
+        $this->callSilent('stubkit:install');
+
+        $this->info('Published /stubs');
+        $this->info('Published /config/stubkit.php');
+        $this->info('Published /resources/views/vendor/stubkit');
+        $this->info('Published components in /resources/js/Jetstream');
+        $this->info('Published /routes/auth.php');
+
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
+        $this->callSilent('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
 
         $this->installAuthRoutes();
 
@@ -36,15 +48,6 @@ class InstallCommand extends Command
             'protected $namespace',
             app_path('Providers/RouteServiceProvider.php')
         );
-
-        $this->comment('Publishing Jetty Configuration...');
-        $this->comment('Publishing Jetty Views...');
-        $this->comment('Publishing Jetty Stubs...');
-
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-config', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-views', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
-        $this->callSilent('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
 
         return 1;
     }
@@ -63,7 +66,11 @@ class InstallCommand extends Command
             \t->namespace(\$this->namespace)
             \t->group(base_path('routes/auth.php'));";
 
-        $this->replaceInFile($search, $replace, app_path('Providers/RouteServiceProvider.php'));
+        $provider = file_get_contents(app_path('Providers/RouteServiceProvider.php'));
+
+        if(! Str::contains($provider, "->group(base_path('routes/auth.php'))")) {
+            $this->replaceInFile($search, $replace, app_path('Providers/RouteServiceProvider.php'));
+        }
     }
     /**
      * Replace a given string within a given file.
