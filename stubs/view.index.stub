@@ -39,7 +39,10 @@
 <script>
     import AppLayout from '@/Layouts/AppLayout'
     import JetNavLink from '@/Jetstream/NavLink'
+    import JetTable from '@/Jetstream/Table'
     import JetSectionTitle from '@/Jetstream/SectionTitle'
+    import JetDropdownDots from '@/Jetstream/DropdownDots'
+    import JetDropdownLink from '@/Jetstream/DropdownLink'
     import JetSecondaryButton from '@/Jetstream/SecondaryButton'
 
     export default {
@@ -50,6 +53,9 @@
         components: {
             AppLayout,
             JetNavLink,
+            JetTable,
+            JetDropdownDots,
+            JetDropdownLink,
             JetSectionTitle,
             JetSecondaryButton,
         }
