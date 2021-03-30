@@ -143,7 +143,7 @@ return [
                 return Fields::render('show', $fields);
             },
             'create' => function ($fields) {
-                return Fields::render('creats', $fields);
+                return Fields::render('create', $fields);
             },
             'edit' => function ($fields) {
                 return Fields::render('edit', $fields);
