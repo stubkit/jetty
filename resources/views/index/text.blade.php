@@ -1,3 +1,3 @@
 <template #td.{{ $field->snake()  }}="{ value }">
-    <span>@{{ value }}}</span>
+    <span>@{{ value }}</span>
 </template>

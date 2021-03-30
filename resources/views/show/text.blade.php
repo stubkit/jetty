@@ -4,5 +4,6 @@
     </template>
     <template #value>
         @stubkit('{{ {{ model.camel }}.{{ field.snake }} }}')
+
     </template>
 </jet-detail>
