@@ -17,7 +17,7 @@
         </template>
 
         <template #actions>
-            <jet-danger-button :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <jet-danger-button type="submit" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
                 Delete
             </jet-danger-button>
         </template>
