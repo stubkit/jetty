@@ -12,7 +12,7 @@ class {{model.studly}}Controller extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function index()
     {
@@ -26,7 +26,7 @@ class {{model.studly}}Controller extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function create()
     {
@@ -36,8 +36,8 @@ class {{model.studly}}Controller extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  Create{{model.studly}}Request  $request
+     * @return \Inertia\Response
      */
     public function store(Create{{model.studly}}Request $request)
     {
@@ -51,8 +51,8 @@ class {{model.studly}}Controller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\{{model.studly}}  ${{model.camel}}
-     * @return \Illuminate\Http\Response
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Inertia\Response
      */
     public function show({{model.studly}} ${{model.camel}})
     {
@@ -64,8 +64,8 @@ class {{model.studly}}Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\{{model.studly}}  ${{model.camel}}
-     * @return \Illuminate\Http\Response
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Inertia\Response
      */
     public function edit({{model.studly}} ${{model.camel}})
     {
@@ -77,9 +77,9 @@ class {{model.studly}}Controller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\{{model.studly}}  ${{model.camel}}
-     * @return \Illuminate\Http\Response
+     * @param  Update{{model.studly}}Request  $request
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Inertia\Response
      */
     public function update(Update{{model.studly}}Request $request, {{model.studly}} ${{model.camel}})
     {
@@ -93,8 +93,8 @@ class {{model.studly}}Controller extends Controller
     /**
      * Show the form for removing a new resource.
      *
-     * @param  \App\Models\{{model.studly}}  ${{model.camel}}
-     * @return \Illuminate\Http\Response
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Inertia\Response
      */
     public function remove({{model.studly}} ${{model.camel}})
     {
@@ -106,8 +106,8 @@ class {{model.studly}}Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\{{model.studly}}  ${{model.camel}}
-     * @return \Illuminate\Http\Response
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Inertia\Response
      */
     public function destroy({{model.studly}} ${{model.camel}})
     {
