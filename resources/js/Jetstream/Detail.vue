@@ -1,9 +1,9 @@
 <template>
-    <div class="flex">
-        <dt class="px-4 py-5 font-bold text-gray-500">
+    <div class="py-4  sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 px-6">
+        <dt class="font-bold text-gray-400">
             <slot name="key"></slot>
         </dt>
-        <dd class="px-4 py-5 ">
+        <dd class="mt-1 text-gray-900 sm:mt-0 sm:col-span-2">
             <slot name="value"></slot>
         </dd>
     </div>
