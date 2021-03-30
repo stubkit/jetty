@@ -37,7 +37,7 @@ class {{model.studly}}Controller extends Controller
      * Store a newly created resource in storage.
      *
      * @param  Create{{model.studly}}Request  $request
-     * @return \Inertia\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Create{{model.studly}}Request $request)
     {
@@ -79,7 +79,7 @@ class {{model.studly}}Controller extends Controller
      *
      * @param  Update{{model.studly}}Request  $request
      * @param  {{model.studly}}  ${{model.camel}}
-     * @return \Inertia\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Update{{model.studly}}Request $request, {{model.studly}} ${{model.camel}})
     {
@@ -107,7 +107,7 @@ class {{model.studly}}Controller extends Controller
      * Remove the specified resource from storage.
      *
      * @param  {{model.studly}}  ${{model.camel}}
-     * @return \Inertia\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy({{model.studly}} ${{model.camel}})
     {
