@@ -91,6 +91,16 @@ class {{model.studly}}Controller extends Controller
     }
 
     /**
+     * Show the form for removing a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function remove()
+    {
+        return Inertia::render('{{model.studlyPlural}}/Remove');
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\{{model.studly}}  ${{model.camel}}

@@ -24,7 +24,6 @@
 
 <script>
     import AppLayout from '@/Layouts/AppLayout'
-    import JetSectionBorder from '@/Jetstream/SectionBorder'
     import Edit{{model.studly}}Form from './Edit{{model.studly}}Form'
 
     export default {
@@ -34,7 +33,6 @@
 
         components: {
             AppLayout,
-            JetSectionBorder,
             Edit{{model.studly}}Form,
         },
     }

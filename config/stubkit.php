@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Str;
+use StubKit\Facades\Fields;
 
 return [
 
@@ -127,25 +128,25 @@ return [
 
         'fields' => [
             'schema' => function ($fields) {
-                return view('stubkit::schema')->with('fields', $fields);
+                return Fields::render('schema', $fields);
             },
             'faker' => function ($fields) {
-                return view('stubkit::faker')->with('fields', $fields);
+                return Fields::render('faker', $fields);
             },
             'rules' => function ($fields) {
-                return view('stubkit::rules')->with('fields', $fields);
+                return Fields::render('rules', $fields);
             },
             'index' => function ($fields) {
-                return view('stubkit::index')->with('fields', $fields);
+                return Fields::render('index', $fields);
             },
             'show' => function ($fields) {
-                return view('stubkit::show')->with('fields', $fields);
+                return Fields::render('show', $fields);
             },
             'create' => function ($fields) {
-                return view('stubkit::create')->with('fields', $fields);
+                return Fields::render('creats', $fields);
             },
             'edit' => function ($fields) {
-                return view('stubkit::edit')->with('fields', $fields);
+                return Fields::render('edit', $fields);
             },
             'array' => function($fields) {
                return view('stubkit::formats.array')->with('fields', $fields);

@@ -28,9 +28,9 @@
                 </jet-section-title>
 
                 <div class="bg-white rounded-md shadow overflow-x-auto">
-                    <table class="w-full border-t border-gray-200">
+                    <div class="divide-y divide-gray-200">
                         {{ fields.show }}
-                    </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -41,6 +41,8 @@
     import AppLayout from '@/Layouts/AppLayout'
     import JetDropdownDots from '@/Jetstream/DropdownDots'
     import JetDropdownLink from '@/Jetstream/DropdownLink'
+    import JetDetail from '@/Jetstream/Detail'
+    import JetTimestamp from '@/Jetstream/Timestamp'
 
     export default {
         props: [
@@ -51,6 +53,8 @@
             AppLayout,
             JetDropdownDots,
             JetDropdownLink,
+            JetDetail,
+            JetTimestamp,
         },
     }
 </script>
