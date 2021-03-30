@@ -148,6 +148,10 @@ return [
             'edit' => function ($fields) {
                 return Fields::render('edit', $fields);
             },
+            'casts' => function ($fields) {
+                $fields = Fields::render('casts', $fields);
+                return empty($fields) ? '' : "public \$casts = [\n$fields\n];";
+            },
             'array' => function($fields) {
                return view('stubkit::formats.array')->with('fields', $fields);
             },
