@@ -41,7 +41,8 @@ class InstallCommand extends Command
         $this->callSilent('vendor:publish', ['--tag' => 'jetty-vue', '--force' => true]);
         $this->callSilent('vendor:publish', ['--tag' => 'jetty-stubs', '--force' => true]);
 
-        $this->callSilent('composer require dillingham/interacts-with-uploads');
+        $this->comment('Include the following for upload helper:')
+        $this->info('composer require dillingham/interacts-with-uploads');
 
         $this->installAuthRoutes();
 
