@@ -49,6 +49,7 @@
         data() {
             return {
                 form: this.$inertia.form({
+                    _method: 'PUT',
                     {{ fields.jsObjectFilled }}
                 })
             }
@@ -56,7 +57,7 @@
 
         methods: {
             edit{{model.studly}}() {
-                this.form.put(route('{{model.slugPlural}}.update', this.{{model.camel}}.id), {
+                this.form.post(route('{{model.slugPlural}}.update', this.{{model.camel}}.id), {
                     errorBag: 'edit{{model.studly}}',
                     preserveScroll: true
                 });
