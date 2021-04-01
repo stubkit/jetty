@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8e9b05f7963f604426ad5057834ef58",
+    "content-hash": "ef90ffa06c2e03239d70cc065de4859d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -105,42 +105,6 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.3"
             },
             "time": "2020-10-02T16:03:48+00:00"
-        },
-        {
-            "name": "dillingham/interacts-with-uploads",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dillingham/interacts-with-uploads.git",
-                "reference": "b05d81507d19cf56a79bdcd55d704ed38f5c21b3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dillingham/interacts-with-uploads/zipball/b05d81507d19cf56a79bdcd55d704ed38f5c21b3",
-                "reference": "b05d81507d19cf56a79bdcd55d704ed38f5c21b3",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dillingham\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brian Dillingham",
-                    "email": "brian@dillingham.dev"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/dillingham/interacts-with-uploads/issues",
-                "source": "https://github.com/dillingham/interacts-with-uploads/tree/0.1.0"
-            },
-            "time": "2021-03-31T22:23:04+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -1194,16 +1158,16 @@
         },
         {
             "name": "stubkit/stubkit",
-            "version": "0.3.0",
+            "version": "0.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stubkit/stubkit.git",
-                "reference": "fb109f2fdf042b011b372c7521214bc3b37b2266"
+                "reference": "2957cc8718669cba084d75b2c0655381c3a77d04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stubkit/stubkit/zipball/fb109f2fdf042b011b372c7521214bc3b37b2266",
-                "reference": "fb109f2fdf042b011b372c7521214bc3b37b2266",
+                "url": "https://api.github.com/repos/stubkit/stubkit/zipball/2957cc8718669cba084d75b2c0655381c3a77d04",
+                "reference": "2957cc8718669cba084d75b2c0655381c3a77d04",
                 "shasum": ""
             },
             "require": {
@@ -1240,9 +1204,9 @@
             "description": "Laravel stubs on steriods",
             "support": {
                 "issues": "https://github.com/stubkit/stubkit/issues",
-                "source": "https://github.com/stubkit/stubkit/tree/0.3.0"
+                "source": "https://github.com/stubkit/stubkit/tree/0.3.1"
             },
-            "time": "2021-03-30T07:56:31+00:00"
+            "time": "2021-04-01T06:19:23+00:00"
         },
         {
             "name": "symfony/finder",
