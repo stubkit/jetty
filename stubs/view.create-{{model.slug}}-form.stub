@@ -24,6 +24,7 @@
     import JetButton from '@/Jetstream/Button'
     import JetFormSection from '@/Jetstream/FormSection'
     import JetInput from '@/Jetstream/Input'
+    import JetImageInput from '@/Jetstream/ImageInput'
     import JetTextarea from '@/Jetstream/Textarea'
     import JetInputError from '@/Jetstream/InputError'
     import JetLabel from '@/Jetstream/Label'
@@ -33,6 +34,7 @@
             JetButton,
             JetFormSection,
             JetInput,
+            JetImageInput,
             JetTextarea,
             JetInputError,
             JetLabel,
