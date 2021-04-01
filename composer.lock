@@ -1158,16 +1158,16 @@
         },
         {
             "name": "stubkit/stubkit",
-            "version": "0.3.2",
+            "version": "0.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stubkit/stubkit.git",
-                "reference": "b04675fd6d7690fef3e12b77437923773170771e"
+                "reference": "93a9309d6bda27490e45b40ece97990baf9e724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stubkit/stubkit/zipball/b04675fd6d7690fef3e12b77437923773170771e",
-                "reference": "b04675fd6d7690fef3e12b77437923773170771e",
+                "url": "https://api.github.com/repos/stubkit/stubkit/zipball/93a9309d6bda27490e45b40ece97990baf9e724d",
+                "reference": "93a9309d6bda27490e45b40ece97990baf9e724d",
                 "shasum": ""
             },
             "require": {
@@ -1204,9 +1204,9 @@
             "description": "Laravel stubs on steriods",
             "support": {
                 "issues": "https://github.com/stubkit/stubkit/issues",
-                "source": "https://github.com/stubkit/stubkit/tree/0.3.2"
+                "source": "https://github.com/stubkit/stubkit/tree/0.3.3"
             },
-            "time": "2021-04-01T08:34:10+00:00"
+            "time": "2021-04-01T15:21:33+00:00"
         },
         {
             "name": "symfony/finder",
