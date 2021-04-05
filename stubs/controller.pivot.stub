@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\Create{{model.studly}}Request;
+use App\Http\Requests\Update{{model.studly}}Request;
+use App\Models\{{model.studly}};
+use Inertia\Inertia;
+
+class {{model.studly}}Controller extends Controller
+{
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  Create{{model.studly}}Request  $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Create{{model.studly}}Request $request)
+    {
+        ${{model.camel}} = {{model.studly}}::firstOrCreate($request->validated());
+
+        return redirect()->route('{{model.slugPlural}}.show', ${{model.camel}});
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  {{model.studly}}  ${{model.camel}}
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function destroy({{model.studly}} ${{model.camel}})
+    {
+        ${{model.camel}}->delete();
+
+        return redirect()->route('{{model.slugPlural}}.index');
+    }
+}
