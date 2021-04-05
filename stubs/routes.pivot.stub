@@ -1,2 +1,2 @@
-Route::post('{{ parent.slugPlural }}/{{{ parent.slug }}}/{{ model.slugPlural }}, '{{ model.studly }}Controller@store')->name('{{ model.slugPlural }}.store');
+Route::post('{{ parent.slugPlural }}/{{{ parent.slug }}}/{{ model.slugPlural }}', '{{ model.studly }}Controller@store')->name('{{ model.slugPlural }}.store');
 Route::delete('{{ parent.slugPlural }}/{{{ parent.slug }}}/{{ model.slugPlural }}/{{ model.slug }}', '{{ model.studly }}Controller@destroy')->name('{{ model.slugPlural }}.destroy');
