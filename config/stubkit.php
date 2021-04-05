@@ -30,8 +30,6 @@ return [
             'make:migration create_{{ scaffold.snakePlural }}_table',
             'migrate',
             'db:seed --class={{ scaffold.studly }}Seeder',
-            'test --filter={{ scaffold.studly }}Test',
-            'echo {{app.url}}/{{scaffold.slugPlural}}',
         ],
 
         'api' => [
@@ -41,7 +39,6 @@ return [
             'make:resource {{ scaffold.studly }}Collection',
             'migrate',
             'db:seed --class={{ scaffold.studly }}Seeder',
-            'test --filter={{ scaffold.studly }}Test',
         ],
 
         'pivot' => [
