@@ -45,7 +45,7 @@ return [
             'make:model {{model.studly}}',
             'make:routes {{model.studly}} --type=pivot --to=web',
             'make:controller {{model.studly}}Controller --type=pivot',
-            'make:migration create_{{parent.snake}}_{{child.snake}}_table',
+            'make:migration create_{{model.snakePlural}}_table',
         ],
 
         'nested' => [
