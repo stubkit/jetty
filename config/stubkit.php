@@ -43,7 +43,7 @@ return [
 
         'pivot' => [
             'make:model {{model.studly}}',
-            'make:routes {{model.studly}} --type=pivot --to=web',
+            'make:routes {{model.studly}} --type=pivot --to=auth',
             'make:controller {{model.studly}}Controller --type=pivot',
             'make:migration create_{{model.snakePlural}}_table',
         ],
@@ -53,7 +53,7 @@ return [
             'make:request Create{{ scaffold.studly }}Request',
             'make:request Update{{ scaffold.studly }}Request',
             'make:controller {{scaffold.studly}}Controller --type=nested',
-            'make:routes {{scaffold.studly}} --type=nested --to=web',
+            'make:routes {{scaffold.studly}} --type=nested --to=auth',
             'make:migration create_{{scaffold.snakePlural}}_table',
         ],
     ],
